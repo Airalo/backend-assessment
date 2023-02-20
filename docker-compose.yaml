@@ -1,0 +1,35 @@
+version: '3'
+services:
+
+    setup:
+      image: bitnami/laravel
+      volumes:
+        - './:/app'
+      entrypoint: ["composer", "install"]
+      
+    mariadb:
+      image: bitnami/mariadb
+      restart: always
+      environment:
+        - ALLOW_EMPTY_PASSWORD=yes
+        - MARIADB_USER=${DB_USERNAME}
+        - MARIADB_PASSWORD=${DB_PASSWORD}
+        - MARIADB_DATABASE=${DB_DATABASE}
+      ports:
+        - "3306:${DB_PORT}"
+
+    myapp:
+      image: bitnami/laravel
+      restart: always
+      ports:
+        - "8000:8000"
+      volumes:
+        - './:/app'
+      depends_on:
+        setup:
+          condition: service_completed_successfully
+        mariadb:
+          condition: service_started
+
+networks:
+  default:
