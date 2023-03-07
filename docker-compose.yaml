@@ -5,7 +5,12 @@ services:
       image: bitnami/laravel
       volumes:
         - './:/app'
-      entrypoint: ["composer", "install"]
+      entrypoint:
+      - "/bin/sh"
+      - -ecx
+      - |
+          composer install
+          php artisan key:generate
       
     mariadb:
       image: bitnami/mariadb
