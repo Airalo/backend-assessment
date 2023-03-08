@@ -1,13 +1,33 @@
 # Airalo Assessment
+Welcome. This project is meant to accompany you during your interview at Airalo.
 
 ## Requirements
-    PHP >= 8.0
+- PHP >= 8.0
 
-## Installation
-    cd [YOUR WORKSPACE]
-    mkdir -p airalo-assessment/project   
-    cd airalo-assessment/project
-    git clone git@github.com:Airalo/backend-assessment.git .
+### Installation
+```
+cd [YOUR WORKSPACE]
+mkdir -p airalo-assessment/project   
+cd airalo-assessment/project
+git clone git@github.com:Airalo/backend-assessment.git .
+```
 
-### Composer dependencies
-    composer install
+#### Composer dependencies
+```
+composer install
+```
+
+## Alternatively - Using Docker
+You can use the included `.env.docker` to set up your database connection details.
+```
+cp .env.docker .env
+docker compose up
+```
+
+### Open the app
+Server will be running [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### Run Artisan
+```
+docker compose exec myapp php artisan <command>
+```
