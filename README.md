@@ -31,3 +31,17 @@ Server will be running [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 ```
 docker compose exec myapp php artisan <command>
 ```
+
+### DB Connection Validation
+
+```
+docker compose exec myapp php artisan migrate
+docker compose exec myapp php artisan tinker
+> DB::select('SHOW TABLES');
+# [
+#    {#3716
+#      +"Tables_in_airalo_assessment": "failed_jobs",
+#    },
+#    ...
+# ]
+```
