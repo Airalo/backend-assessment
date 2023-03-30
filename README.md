@@ -44,4 +44,6 @@ docker compose exec myapp php artisan tinker
 #    },
 #    ...
 # ]
+curl http://127.0.0.1:8000/db-test
+# [{"Tables_in_airalo_assessment":"failed_jobs"},{"Tables_in_airalo_assessment":"migrations"},{"Tables_in_airalo_assessment":"password_resets"},{"Tables_in_airalo_assessment":"personal_access_tokens"},{"Tables_in_airalo_assessment":"users"}]
 ```
