@@ -19,5 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/db-test', function () {
-    return DB::select('SHOW TABLES');
+    return DB::connection()->getConfig('driver') == 'sqlite'
+        ? DB::select("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;")
+        : DB::select('SHOW TABLES');
 });
