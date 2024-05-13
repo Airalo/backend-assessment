@@ -2,7 +2,7 @@ version: '3'
 services:
 
     setup:
-      image: bitnami/laravel
+      image: bitnami/laravel:9
       volumes:
         - './:/app'
       entrypoint:
@@ -13,7 +13,7 @@ services:
           php artisan key:generate
 
     mariadb:
-      image: bitnami/mariadb
+      image: bitnami/mariadb:11.3
       restart: always
       environment:
         - ALLOW_EMPTY_PASSWORD=yes
@@ -24,7 +24,7 @@ services:
         - "3306"
 
     myapp:
-      image: bitnami/laravel
+      image: bitnami/laravel:9
       restart: always
       ports:
         - "8000:8000"
