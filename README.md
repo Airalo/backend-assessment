@@ -2,12 +2,12 @@
 Welcome. This project is meant to accompany you during your interview at Airalo.
 
 ## Requirements
-- PHP >= 8.0
+- PHP >= 8.3
 
 ## Installation
 ```
 cd [YOUR WORKSPACE]
-mkdir -p airalo-assessment/project   
+mkdir -p airalo-assessment/project
 cd airalo-assessment/project
 git clone git@github.com:Airalo/backend-assessment.git .
 ```
