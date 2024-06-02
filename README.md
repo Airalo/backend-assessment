@@ -2,12 +2,12 @@
 Welcome. This project is meant to accompany you during your interview at Airalo.
 
 ## Requirements
-- PHP >= 8.0
+- PHP >= 8.3
 
 ## Installation
 ```
 cd [YOUR WORKSPACE]
-mkdir -p airalo-assessment/project   
+mkdir -p airalo-assessment/project
 cd airalo-assessment/project
 git clone git@github.com:Airalo/backend-assessment.git .
 ```
@@ -62,5 +62,5 @@ docker compose exec myapp php artisan <command>
 ```
 docker compose exec myapp php artisan migrate
 curl http://127.0.0.1:8000/db-test
-# [{"Tables_in_airalo_assessment":"failed_jobs"},{"Tables_in_airalo_assessment":"migrations"},{"Tables_in_airalo_assessment":"password_resets"},{"Tables_in_airalo_assessment":"personal_access_tokens"},{"Tables_in_airalo_assessment":"users"}]
+# [{"Tables_in_airalo_assessment":"cache"},{"Tables_in_airalo_assessment":"cache_locks"},{"Tables_in_airalo_assessment":"failed_jobs"},{"Tables_in_airalo_assessment":"job_batches"},{"Tables_in_airalo_assessment":"jobs"},{"Tables_in_airalo_assessment":"migrations"},{"Tables_in_airalo_assessment":"password_reset_tokens"},{"Tables_in_airalo_assessment":"personal_access_tokens"},{"Tables_in_airalo_assessment":"sessions"},{"Tables_in_airalo_assessment":"users"}]
 ```

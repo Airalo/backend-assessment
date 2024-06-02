@@ -2,7 +2,7 @@ version: '3'
 services:
 
     setup:
-      image: bitnami/laravel:9
+      image: bitnami/laravel:11
       volumes:
         - './:/app'
       entrypoint:
@@ -24,7 +24,7 @@ services:
         - "3306"
 
     myapp:
-      image: bitnami/laravel:9
+      image: bitnami/laravel:11
       restart: always
       ports:
         - "8000:8000"
