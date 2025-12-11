@@ -1,10 +1,9 @@
-version: '3'
 services:
 
     setup:
-      image: bitnami/laravel:9
+      image: laravelfans/laravel:9-dev
       volumes:
-        - './:/app'
+        - '.:/var/www/laravel'
       entrypoint:
       - "/bin/sh"
       - -ecx
@@ -13,7 +12,7 @@ services:
           php artisan key:generate
 
     mariadb:
-      image: bitnami/mariadb:11.3
+      image: bitnami/mariadb:latest
       restart: always
       environment:
         - ALLOW_EMPTY_PASSWORD=yes
@@ -24,12 +23,12 @@ services:
         - "3306"
 
     myapp:
-      image: bitnami/laravel:9
+      image: laravelfans/laravel:9-dev
       restart: always
       ports:
-        - "8000:8000"
+        - "8000:80"
       volumes:
-        - './:/app'
+        - '.:/var/www/laravel'
       depends_on:
         setup:
           condition: service_completed_successfully
